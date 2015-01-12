@@ -86,19 +86,23 @@ int main(int argc, char **argv) {
     return 0;
   }
 
+  system("touch output.text");
+
   // Command that is to be run
   string cmd = exec + " < " + input + " > output.text";
 
   modify_cmd(cmd);
 
   // Time Calculation begins
+  
   double t1 = clock();
   system(cmd.c_str());
   double t2 = clock();
+
   // Time Calculation Ends
 
   system("rm -rf output.text");
 
-  // Print the results
+  // Print the results to stdout
   printf("Took about **%.4f secs**\n", (t2 - t1) / CLOCKS_PER_SEC);
 } 
