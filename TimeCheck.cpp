@@ -18,7 +18,7 @@ vector< string > arguments; // Keeps all the arguments passed in the program
 inline void print_info() {
   cerr << "Usage \n";
   cerr << "---------------------------\n";
-  cerr << "[tc] <..1..> <..2..>\n";
+  cerr << "[tc] file_name input_file [optional custom_timelimit]\n";
   cerr << "1 => Out file / Executable file\n";
   cerr << "2 => Input file\n";
   cerr << "If usage is unclear, refer README.md\n";
@@ -64,6 +64,7 @@ void modify_cmd(string& cmd) {
 }
 
 int main(int argc, char **argv) {
+
   init(argc, argv);
 
   if(argc == 1 || argc == 2 || has("-h") || has("--h")) {
@@ -90,7 +91,8 @@ int main(int argc, char **argv) {
 
   // Command that is to be run
   string cmd = exec + " < " + input + " > output.text";
-
+  cmd = "(sleep 5 && cat error && exit 0) && " + cmd;
+  
   modify_cmd(cmd);
 
   // Time Calculation begins
