@@ -9,7 +9,7 @@ A small utility program which computes the amount of time your program will take
 Compile the code with the following syntax:
 
   ```
-    g++ -Wall -o tc.out tc.cpp
+    g++ -Wall -o tc tc.cpp
   ``` 
 
 After executing this you'll have tc.out file in your present working directory. This is the barebone of all the following computations. 
@@ -28,7 +28,7 @@ Now you can check the time taken by your program on any input like this:
 Compile the code with the following syntax:
 
   ```
-    g++ -Wall -o tc.exe tc.cpp
+    g++ -Wall -o tc tc.cpp
   ```
 
 After executing this you'll have tc.exe file in your present working directory. This is the barebone of all the following computations.
